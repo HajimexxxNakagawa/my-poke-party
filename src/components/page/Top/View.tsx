@@ -1,17 +1,25 @@
+import { Center, Text } from "@chakra-ui/react";
 import { VFC } from "react";
 
-import { UserTable } from "@/components/model/User/UserTable";
+import { PokeCardList } from "@/components/model/Pokemon/PokeCardList";
 
-import { Spacer } from "@/components/ui/Spacer";
-
-import { mockUserList } from "@/mocks/User";
+const MY_POKEMON_PARTY = [
+  "empoleon",
+  "staraptor",
+  "luxray",
+  "medicham",
+  "garchomp",
+  "rapidash",
+];
 
 export const TopPageView: VFC = () => {
   return (
-    <main className="flex flex-col justify-center items-center p-4 h-screen">
-      <h1>Welcome to Nextwind Prototyping Template!</h1>
-      <Spacer size={32} />
-      <UserTable users={mockUserList} />
+    <main>
+      <Center flexDirection={"column"}>
+        <Text fontSize="4xl">My Favorite Party</Text>
+
+        <PokeCardList pokemons={MY_POKEMON_PARTY} />
+      </Center>
     </main>
   );
 };
